@@ -25,7 +25,6 @@ dbt_project/
 
 - **Airflow DAG** to orchestrate dbt models (`dbt run`) and run data quality checks (`dbt test`)
 - **Dockerized setup** for local development using `docker-compose`
-- **Modular project structure** for easy organization and scaling
 - **Snowflake integration** using dbt profiles
 
 ---
