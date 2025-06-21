@@ -4,20 +4,20 @@ This project demonstrates a data pipeline using **dbt (Data Build Tool)** and **
 
 ## Project Structure
 
-dbt_project/
-├── airflow/                 # Airflow setup
-│   ├── config/              # Config files
-│   ├── dags/                # DAG files
-│   ├── logs/                # Logs
-│   ├── plugins/             # Plugins
-│   └── docker-compose.yml   # Docker setup
-├── data_set/                # Raw data
-└── dbt/                     # dbt project
-    ├── models/              # SQL models
-    ├── tests/               # Data tests
-    ├── macros/              # SQL functions
-    ├── seeds/               # Reference data
-    └── dbt_project.yml      # dbt config
+    dbt_project/
+    ├── airflow/                 # Airflow setup
+    │   ├── config/              # Config files
+    │   ├── dags/                # DAG files
+    │   ├── logs/                # Logs
+    │   ├── plugins/             # Plugins
+    │   └── docker-compose.yml   # Docker setup
+    ├── data_set/                # Raw data
+    └── dbt/                     # dbt project
+        ├── models/              # SQL models
+        ├── tests/               # Data tests
+        ├── macros/              # SQL functions
+        ├── seeds/               # Reference data
+        └── dbt_project.yml      # dbt config
 
 ---
 
