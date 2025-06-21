@@ -1,0 +1,141 @@
+[2025-06-20T22:52:35.854+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-06-20T22:52:35.897+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_dag.dbt_test manual__2025-06-20T22:50:25.083570+00:00 [queued]>
+[2025-06-20T22:52:35.928+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_dag.dbt_test manual__2025-06-20T22:50:25.083570+00:00 [queued]>
+[2025-06-20T22:52:35.947+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-06-20T22:52:35.993+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): dbt_test> on 2025-06-20 22:50:25.083570+00:00
+[2025-06-20T22:52:36.008+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=455) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-06-20T22:52:36.013+0000] {standard_task_runner.py:72} INFO - Started process 458 to run task
+[2025-06-20T22:52:36.015+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_dag', 'dbt_test', 'manual__2025-06-20T22:50:25.083570+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpguco1ysz']
+[2025-06-20T22:52:36.018+0000] {standard_task_runner.py:105} INFO - Job 11: Subtask dbt_test
+[2025-06-20T22:52:36.186+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_dag.dbt_test manual__2025-06-20T22:50:25.083570+00:00 [running]> on host c64d85f87926
+[2025-06-20T22:52:36.443+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_dag' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-06-20T22:50:25.083570+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-20T22:50:25.083570+00:00'
+[2025-06-20T22:52:36.445+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-06-20T22:52:36.487+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-06-20T22:52:36.491+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dags && dbt test --profiles-dir /opt/***/dags/.dbt']
+[2025-06-20T22:52:36.520+0000] {subprocess.py:99} INFO - Output:
+[2025-06-20T22:52:44.258+0000] {subprocess.py:106} INFO - [0m22:52:44  Running with dbt=1.10.2
+[2025-06-20T22:52:48.709+0000] {subprocess.py:106} INFO - [0m22:52:48  Registered adapter: snowflake=1.9.4
+[2025-06-20T22:52:50.857+0000] {subprocess.py:106} INFO - [0m22:52:50  Found 4 models, 4 data tests, 3 sources, 476 macros
+[2025-06-20T22:52:50.867+0000] {subprocess.py:106} INFO - [0m22:52:50
+[2025-06-20T22:52:50.869+0000] {subprocess.py:106} INFO - [0m22:52:50  Concurrency: 4 threads (target='dev')
+[2025-06-20T22:52:50.871+0000] {subprocess.py:106} INFO - [0m22:52:50
+[2025-06-20T22:52:54.409+0000] {subprocess.py:106} INFO - [0m22:52:54  1 of 4 START test not_null_stg_customers_customer_id ........................... [RUN]
+[2025-06-20T22:52:54.412+0000] {subprocess.py:106} INFO - [0m22:52:54  2 of 4 START test not_null_stg_sales_product_id ................................ [RUN]
+[2025-06-20T22:52:54.415+0000] {subprocess.py:106} INFO - [0m22:52:54  3 of 4 START test not_null_stg_sales_transaction_id ............................ [RUN]
+[2025-06-20T22:52:54.419+0000] {subprocess.py:106} INFO - [0m22:52:54  4 of 4 START test unique_stg_customers_customer_id ............................. [RUN]
+[2025-06-20T22:52:55.519+0000] {subprocess.py:106} INFO - [0m22:52:55  1 of 4 ERROR not_null_stg_customers_customer_id ................................ [[31mERROR[0m in 1.10s]
+[2025-06-20T22:52:57.063+0000] {subprocess.py:106} INFO - [0m22:52:57  2 of 4 ERROR not_null_stg_sales_product_id ..................................... [[31mERROR[0m in 2.64s]
+[2025-06-20T22:52:57.119+0000] {subprocess.py:106} INFO - [0m22:52:57  3 of 4 ERROR not_null_stg_sales_transaction_id ................................. [[31mERROR[0m in 2.69s]
+[2025-06-20T22:52:57.463+0000] {subprocess.py:106} INFO - [0m22:52:57  4 of 4 ERROR unique_stg_customers_customer_id .................................. [[31mERROR[0m in 3.03s]
+[2025-06-20T22:53:01.295+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.299+0000] {subprocess.py:106} INFO - [0m22:53:01  Finished running 4 data tests in 0 hours 0 minutes and 10.42 seconds (10.42s).
+[2025-06-20T22:53:01.646+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.648+0000] {subprocess.py:106} INFO - [0m22:53:01  [31mCompleted with 4 errors, 0 partial successes, and 0 warnings:[0m
+[2025-06-20T22:53:01.651+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.661+0000] {subprocess.py:106} INFO - [0m22:53:01  [31mFailure in test not_null_stg_customers_customer_id (tests/snowflake_test.yml)[0m
+[2025-06-20T22:53:01.666+0000] {subprocess.py:106} INFO - [0m22:53:01    Database Error in test not_null_stg_customers_customer_id (tests/snowflake_test.yml)
+[2025-06-20T22:53:01.671+0000] {subprocess.py:106} INFO -   002003 (42S02): SQL compilation error:
+[2025-06-20T22:53:01.673+0000] {subprocess.py:106} INFO -   Object 'COFFEE_SHOP_DB.RAW.STG_CUSTOMERS' does not exist or not authorized.
+[2025-06-20T22:53:01.675+0000] {subprocess.py:106} INFO -   compiled code at target/run/snowflake_data_pr/tests/snowflake_test.yml/not_null_stg_customers_customer_id.sql
+[2025-06-20T22:53:01.676+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.678+0000] {subprocess.py:106} INFO - [0m22:53:01    compiled code at target/compiled/snowflake_data_pr/tests/snowflake_test.yml/not_null_stg_customers_customer_id.sql
+[2025-06-20T22:53:01.679+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.680+0000] {subprocess.py:106} INFO - [0m22:53:01  [31mFailure in test not_null_stg_sales_product_id (tests/snowflake_test.yml)[0m
+[2025-06-20T22:53:01.683+0000] {subprocess.py:106} INFO - [0m22:53:01    Database Error in test not_null_stg_sales_product_id (tests/snowflake_test.yml)
+[2025-06-20T22:53:01.685+0000] {subprocess.py:106} INFO -   002003 (42S02): SQL compilation error:
+[2025-06-20T22:53:01.687+0000] {subprocess.py:106} INFO -   Object 'COFFEE_SHOP_DB.RAW.STG_SALES' does not exist or not authorized.
+[2025-06-20T22:53:01.688+0000] {subprocess.py:106} INFO -   compiled code at target/run/snowflake_data_pr/tests/snowflake_test.yml/not_null_stg_sales_product_id.sql
+[2025-06-20T22:53:01.690+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.691+0000] {subprocess.py:106} INFO - [0m22:53:01    compiled code at target/compiled/snowflake_data_pr/tests/snowflake_test.yml/not_null_stg_sales_product_id.sql
+[2025-06-20T22:53:01.692+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.693+0000] {subprocess.py:106} INFO - [0m22:53:01  [31mFailure in test not_null_stg_sales_transaction_id (tests/snowflake_test.yml)[0m
+[2025-06-20T22:53:01.695+0000] {subprocess.py:106} INFO - [0m22:53:01    Database Error in test not_null_stg_sales_transaction_id (tests/snowflake_test.yml)
+[2025-06-20T22:53:01.696+0000] {subprocess.py:106} INFO -   002003 (42S02): SQL compilation error:
+[2025-06-20T22:53:01.698+0000] {subprocess.py:106} INFO -   Object 'COFFEE_SHOP_DB.RAW.STG_SALES' does not exist or not authorized.
+[2025-06-20T22:53:01.699+0000] {subprocess.py:106} INFO -   compiled code at target/run/snowflake_data_pr/tests/snowflake_test.yml/not_null_stg_sales_transaction_id.sql
+[2025-06-20T22:53:01.701+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.703+0000] {subprocess.py:106} INFO - [0m22:53:01    compiled code at target/compiled/snowflake_data_pr/tests/snowflake_test.yml/not_null_stg_sales_transaction_id.sql
+[2025-06-20T22:53:01.704+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.705+0000] {subprocess.py:106} INFO - [0m22:53:01  [31mFailure in test unique_stg_customers_customer_id (tests/snowflake_test.yml)[0m
+[2025-06-20T22:53:01.707+0000] {subprocess.py:106} INFO - [0m22:53:01    Database Error in test unique_stg_customers_customer_id (tests/snowflake_test.yml)
+[2025-06-20T22:53:01.708+0000] {subprocess.py:106} INFO -   002003 (42S02): SQL compilation error:
+[2025-06-20T22:53:01.710+0000] {subprocess.py:106} INFO -   Object 'COFFEE_SHOP_DB.RAW.STG_CUSTOMERS' does not exist or not authorized.
+[2025-06-20T22:53:01.712+0000] {subprocess.py:106} INFO -   compiled code at target/run/snowflake_data_pr/tests/snowflake_test.yml/unique_stg_customers_customer_id.sql
+[2025-06-20T22:53:01.713+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.715+0000] {subprocess.py:106} INFO - [0m22:53:01    compiled code at target/compiled/snowflake_data_pr/tests/snowflake_test.yml/unique_stg_customers_customer_id.sql
+[2025-06-20T22:53:01.717+0000] {subprocess.py:106} INFO - [0m22:53:01
+[2025-06-20T22:53:01.719+0000] {subprocess.py:106} INFO - [0m22:53:01  Done. PASS=0 WARN=0 ERROR=4 SKIP=0 NO-OP=0 TOTAL=4
+[2025-06-20T22:53:03.773+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2025-06-20T22:53:03.811+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-06-20T22:53:03.834+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_dag, task_id=dbt_test, run_id=manual__2025-06-20T22:50:25.083570+00:00, execution_date=20250620T225025, start_date=20250620T225235, end_date=20250620T225303
+[2025-06-20T22:53:03.879+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-06-20T22:53:03.881+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 11 for task dbt_test (Bash command failed. The command returned a non-zero exit code 1.; 458)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-06-20T22:53:03.946+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-06-20T22:53:04.020+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-20T22:53:04.028+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

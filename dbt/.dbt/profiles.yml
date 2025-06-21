@@ -1,0 +1,40 @@
+coffee_dbt_project:
+  outputs:
+    dev:
+      account: tmb31915.us_west_2.aws
+      database: coffee_shop_db
+      password: password
+      role: ACCOUNTADMIN
+      schema: raw
+      threads: 4
+      type: snowflake
+      user: dbt_user
+      warehouse: coffee_shope_wh
+  target: dev
+my_dbt_postgres_pr:
+  outputs:
+    dev:
+      dbname: dbt_db
+      host: localhost
+      pass: postgres
+      port: 5432
+      schema: dbt_schema
+      threads: 1
+      type: postgres
+      user: postgresuser
+  target: dev
+snowflake_data_pr:
+  outputs:
+    dev:
+      account: tmb31915.us-west-2
+      database: coffee_shop_db
+      password: password
+      role: ACCOUNTADMIN
+      schema: raw
+      threads: 4
+      type: snowflake
+      user: dbt_user
+      warehouse: coffee_shop_wh
+      insecure_mode: true
+
+  target: dev
