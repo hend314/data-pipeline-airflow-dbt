@@ -1,4 +1,4 @@
-# dbt-airflow-snowflake
+# End-to-End Data Pipeline Project: dbt, Snowflake & Apache Airflow
 
 This project demonstrates a data pipeline using **dbt (Data Build Tool)** and **Apache Airflow**, targeting a **Snowflake** data warehouse.
 
